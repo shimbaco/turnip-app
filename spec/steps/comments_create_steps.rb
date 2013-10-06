@@ -19,7 +19,7 @@ step '投稿した内容 :body がコメント一覧に表示されること' do
   expect(page).to have_content(body)
 end
 
-step 'コメントテーブルにレコードが増えてます' do
+step 'コメントテーブルにレコードが増えていること' do
   expect(Comment.count).to eq (@comments + 1)
 end
 

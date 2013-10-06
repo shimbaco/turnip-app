@@ -17,8 +17,7 @@ step 'タイトルと本文を入力して投稿ボタンを押す' do
 end
 
 step '詳細ページに移動すること' do
-  binding.pry
-  expect(get: current_path).to route_to(controller: 'entries', action: 'show')
+  expect(page).to have_css('body.entries-show')
 end
 
 step 'Entryテーブルのカウントが1になっていること' do

@@ -5,6 +5,7 @@ gem 'rails', '3.2.14'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'flutie'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
