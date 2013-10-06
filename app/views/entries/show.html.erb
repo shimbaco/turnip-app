@@ -10,6 +10,35 @@
   <%= @entry.body %>
 </p>
 
+<h2>コメント</h2>
+
+<div class="comments">
+  <% @entry.comments.each do |comment| %>
+    <div class="comment">
+      <p class="name"><strong><%= comment.name.presence || '名無しさん' %></strong></p>
+      <p><%= comment.body %></p>
+    </div>
+  <% end %>
+</div>
+
+<h2>コメントを書く</h2>
+
+<%= form_for [@entry, @comment] do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>
